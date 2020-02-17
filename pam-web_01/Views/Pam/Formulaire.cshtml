@@ -1,8 +1,17 @@
-﻿<h2>Formulaire</h2>
+﻿@model pam_web_01.Models.IndexModel
+<h2>Formulaire</h2>
 <div id="simulation" />
-@using (Html.BeginForm("FaireSimulation", "Pam", FormMethod.Post, new{  id ="formulaire"}))
+@using (Html.BeginForm("FaireSimulation", "Pam", FormMethod.Post, new { id = "formulaire" }))
 {
-    <select name="">
-        <option value=""></option>
-    </select>
+    @Html.LabelFor(m => m.SS)
+    @Html.ListBoxFor(m => m.SS, new List<SelectListItem>())
+    @Html.ValidationMessageFor(m => m.SS)
+    @Html.LabelFor(m => m.JoursTravaillés)
+    @Html.EditorFor(m => m.JoursTravaillés)
+    @Html.ValidationMessageFor(m => m.JoursTravaillés)
+    @Html.LabelFor(m => m.HeuresTravaillées)
+    @Html.EditorFor(m => m.HeuresTravaillées)
+    @Html.ValidationMessageFor(m => m.HeuresTravaillées)
+
+
 }
