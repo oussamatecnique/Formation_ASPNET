@@ -1,0 +1,30 @@
+﻿@model Vue_ET_Son_Model.Models.ViewModel05
+@using Vue_ET_Son_Model.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Action06 get </title>
+</head>
+<body>
+    <form action="/First/Action06" method="post">
+        <select  name="personneId">
+            @foreach (Personne2 p in Model.Personnes)
+            {
+                string selected = "";
+                if (p.Id == Model.SelectedId)
+                {
+                    selected = "selected=\"selected\"";
+                }
+                <option value="@p.Id" @selected>@p.Prénom @p.Nom</option>
+            }
+        </select>
+        <input name="valider" type="submit" value="Valider" />
+    </form>
+</body>
+</html>

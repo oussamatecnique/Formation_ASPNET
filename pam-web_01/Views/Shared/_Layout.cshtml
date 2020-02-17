@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <h2>Simulateur de calcul de paie</h2>
+                </td>
+                <td style="width: 20px">
+                    <img id="loading" style="display: none" src="~/Content/images/indicator.gif" />
+                </td>
+                <td>
+                    <a id="lnkFaireSimulation" href="javascript:faireSimulation()">
+                        | Faire la simulation<br />
+                    </a>
+                    <a id="lnkEffacerSimulation" href="javascript:effacerSimulation()">
+                        | Effacer la simulation<br />
+                    </a>
+                    <a id="lnkVoirSimulations" href="javascript:voirSimulations()">
+                        | Voir les simulations<br />
+                    </a>
+                    <a id="lnkRetourFormulaire" href="javascript:retourFormulaire()">
+                        | Retour au formulaire de
+                        simulation<br />
+                    </a>
+                    <a id="lnkEnregistrerSimulation" href="javascript:enregistrerSimulation()">
+                        | Enregistrer la
+                        simulation<br />
+                    </a>
+                    <a id="lnkTerminerSession" href="javascript:terminerSession()">
+                        | Terminer la session<br />
+                    </a>
+                </td>
+        </tbody>
+    </table>
+    <hr />
+    <div id="content">
+        @RenderBody()
+    </div>
+</body>
+</html>
